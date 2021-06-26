@@ -1,9 +1,9 @@
 import React from 'react';
-import './App.module.css';
+import style from './App.module.css';
 
 function App() {
   return (
-    <div>
+    <div className={style.container}>
       Здесь будет код приложения
     </div>
   );
