@@ -8,4 +8,14 @@
     border-radius: var(--border-radius);
     box-shadow: 0 5px 10px 5px rgba(0, 0, 0, 0.9);
     overflow: hidden;
+    display: flex;
+}
+
+.menu_block {
+    width: 20em;
+
+}
+
+.content_block {
+    flex: 1;
 }
