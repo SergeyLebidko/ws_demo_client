@@ -1,5 +1,5 @@
 import React from 'react';
-import {HashRouter, Route} from 'react-router-dom';
+import {Route, Redirect, Switch} from 'react-router-dom';
 import Menu from './Menu/Menu';
 import style from './App.module.css';
 
@@ -33,13 +33,19 @@ function App() {
                 <Menu itemData={menuItemData}/>
             </div>
             <div className={style.content_block}>
-                <HashRouter>
-                    <Route exact path="/" render={() => <div>Выберите пункт меню</div>}/>
+                <Switch>
+                    <Route
+                        exact path="/"
+                        render={() => <div className={style.empty_block}><em>Выберите пункт меню</em></div>}
+                    />
                     {menuItemData.map(
                         (item, index) =>
                             <Route key={index} path={`/${item.href}`} component={Cap}/>
                     )}
-                </HashRouter>
+                    <Route path="*">
+                        <Redirect to="/"/>
+                    </Route>
+                </Switch>
             </div>
         </div>
     );

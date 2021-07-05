@@ -3,8 +3,6 @@ import {withRouter} from 'react-router-dom';
 import style from './Menu.module.css';
 
 function Menu({itemData, history, location}) {
-    console.log(location.pathname);
-
     return (
         <ul className={style.container}>
             {itemData.map(
