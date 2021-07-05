@@ -3,3 +3,19 @@
     color: white;
     height: 100%;
 }
+
+.menu_item {
+    font-family: Montserrat, Arial, serif;
+    padding: 1em 2em;
+    cursor: pointer;
+}
+
+.menu_item:hover {
+    background-color: white;
+    color: black;
+}
+
+.selected_item {
+    background-color: white;
+    color: black;
+}

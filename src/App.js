@@ -1,4 +1,5 @@
 import React from 'react';
+import {HashRouter, Route} from 'react-router-dom';
 import Menu from './Menu/Menu';
 import style from './App.module.css';
 
@@ -32,10 +33,24 @@ function App() {
                 <Menu itemData={menuItemData}/>
             </div>
             <div className={style.content_block}>
-                Здесь будет контент под роутером
+                <HashRouter>
+                    <Route exact path="/" render={() => <div>Выберите пункт меню</div>}/>
+                    {menuItemData.map(
+                        (item, index) =>
+                            <Route key={index} path={`/${item.href}`} component={Cap}/>
+                    )}
+                </HashRouter>
             </div>
         </div>
     );
 }
 
 export default App;
+
+const Cap = ({location}) => {
+    return (
+        <div>
+            {location.pathname}
+        </div>
+    );
+}
