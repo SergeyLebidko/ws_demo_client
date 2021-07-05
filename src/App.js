@@ -1,29 +1,15 @@
 import React from 'react';
 import {Route, Redirect, Switch} from 'react-router-dom';
 import Menu from './Menu/Menu';
+import Echo from './Echo/Echo';
 import style from './App.module.css';
 
 const menuItemData = [
     {
         title: 'Первый',
-        href: '_1'
+        href: 'echo',
+        component: Echo
     },
-    {
-        title: 'Второй',
-        href: '_2'
-    },
-    {
-        title: 'Третий',
-        href: '_3'
-    },
-    {
-        title: 'Четвертый',
-        href: '_4'
-    },
-    {
-        title: 'Пятый',
-        href: '_5'
-    }
 ]
 
 function App() {
@@ -40,7 +26,7 @@ function App() {
                     />
                     {menuItemData.map(
                         (item, index) =>
-                            <Route key={index} path={`/${item.href}`} component={Cap}/>
+                            <Route key={index} path={`/${item.href}`} component={item.component}/>
                     )}
                     <Route path="*">
                         <Redirect to="/"/>
@@ -52,11 +38,3 @@ function App() {
 }
 
 export default App;
-
-const Cap = ({location}) => {
-    return (
-        <div>
-            {location.pathname}
-        </div>
-    );
-}
