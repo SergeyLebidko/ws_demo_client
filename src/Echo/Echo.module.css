@@ -22,15 +22,27 @@
     padding: 0 0.5em 0.5em;
 }
 
-.send_button {
+.control > * + * {
+    margin-left: 0.5em;
+}
+
+.button {
     padding: 1em 2em;
-    background-color: dodgerblue;
-    color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 
-.send_button:active {
+.enabled {
+    color: white;
+    background-color: dodgerblue;
+}
+
+.disabled {
+    color: dimgray;
+    background-color: lightgray;
+}
+
+.button:active {
     background-color: deepskyblue;
 }

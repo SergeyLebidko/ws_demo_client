@@ -5,7 +5,8 @@
     margin: 0.5em;
     padding: 0.5em;
     color: ForestGreen;
-    background-color: rgb(235, 235, 235);
+    background-color: rgb(240, 240, 240);
     border-radius: var(--border-radius);
     overflow: auto;
+    border: 1px solid lightgray;
 }
