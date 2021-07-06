@@ -1,4 +1,4 @@
-import React, {useState, useRef, useEffect, useCallback} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import Display from '../Display/Display';
 import {HOST} from '../settings';
 import style from './Echo.module.css';
