@@ -28,6 +28,7 @@ function Echo() {
             let socket = new WebSocket(HOST + 'ws/echo/');
             socket.onopen = openHandler;
             socket.onmessage = receiveHandler;
+            socket.onclose = closeHandler;
         }
     }, [socketFlag]);
 
@@ -48,6 +49,11 @@ function Echo() {
         show('<< ' + event.data);
     }
 
+    let closeHandler = () => {
+        show('Соединение закрыто');
+        setHasSocketReady(false);
+    }
+
     // Обработчики кликов на кнопках управления
 
     let openClickHandler = () => {
@@ -62,8 +68,6 @@ function Echo() {
 
     let closeClickHandler = () => {
         connection.current.close();
-        setHasSocketReady(false);
-        show('Соединение закрыто');
     }
 
     let clearClickHandler = () => {
@@ -74,9 +78,8 @@ function Echo() {
         <div className={style.container}>
             <h1 className={style.header}>
                 Простейший пример организации работы с сокетами.
-                При монтировании компонента websocket открывается, при размонтировании - закрывается.
-                При нажатии на кнопку "Отправить" на сервер отправляется сообщение.
-                Ответ сервера выводится пользователю.
+                Соединение с сервером открывается из закрывается по требованию пользователя.
+                Сервер сразу же присылает сообщение в ответ на запрос с клиентской стороны.
             </h1>
             <Display data={data}/>
             <div className={style.control}>
