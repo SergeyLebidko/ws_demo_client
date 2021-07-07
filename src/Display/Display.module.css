@@ -10,3 +10,21 @@
     overflow: auto;
     border: 1px solid lightgray;
 }
+
+.container::-webkit-scrollbar {
+    width: 7px;
+    height: 7px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background-color: lightgray;
+    border-radius: var(--border-radius);
+}
+
+.container:hover::-webkit-scrollbar-thumb {
+    background-color: dimgray;
+}
+
+.container::-webkit-scrollbar-corner {
+    border-radius: var(--border-radius);
+}
