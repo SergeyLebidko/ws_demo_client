@@ -2,6 +2,7 @@ import React, {useState, useRef, useEffect} from 'react';
 import Display from '../Display/Display';
 import {HOST} from '../settings';
 import style from './Echo.module.css';
+import commonStyle from '../common.module.css';
 
 const ECHO_TEXT = 'echo_request';
 
@@ -82,31 +83,31 @@ function Echo() {
                 Сервер сразу же присылает сообщение в ответ на запрос с клиентской стороны.
             </h1>
             <Display data={data}/>
-            <div className={style.control}>
+            <div className={commonStyle.control}>
                 <input
                     type="button"
-                    className={style.button + (hasSocketReady ? (' ' + style.disabled) : (' ' + style.enabled))}
+                    className={commonStyle.button + (hasSocketReady ? (' ' + commonStyle.disabled) : (' ' + commonStyle.enabled))}
                     onClick={openClickHandler}
                     disabled={hasSocketReady}
                     value="Открыть"
                 />
                 <input
                     type="button"
-                    className={style.button + (hasSocketReady ? (' ' + style.enabled) : (' ' + style.disabled))}
+                    className={commonStyle.button + (hasSocketReady ? (' ' + commonStyle.enabled) : (' ' + commonStyle.disabled))}
                     onClick={sendClickHandler}
                     disabled={!hasSocketReady}
                     value="Отправить"
                 />
                 <input
                     type="button"
-                    className={style.button + (hasSocketReady ? (' ' + style.enabled) : (' ' + style.disabled))}
+                    className={commonStyle.button + (hasSocketReady ? (' ' + commonStyle.enabled) : (' ' + commonStyle.disabled))}
                     onClick={closeClickHandler}
                     disabled={!hasSocketReady}
                     value="Закрыть"
                 />
                 <input
                     type="button"
-                    className={style.button + ' ' + (data.length === 0 ? style.disabled : style.enabled)}
+                    className={commonStyle.button + ' ' + (data.length === 0 ? commonStyle.disabled : commonStyle.enabled)}
                     onClick={clearClickHandler}
                     disabled={data.length === 0}
                     value="Очистить"
