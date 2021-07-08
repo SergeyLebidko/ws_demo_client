@@ -8,10 +8,3 @@
 .container > ul {
     flex: 1;
 }
-
-.header {
-    font-family: Montserrat, Arial, serif;
-    padding: 0.5em;
-    text-align: center;
-    margin-bottom: 1em;
-}
