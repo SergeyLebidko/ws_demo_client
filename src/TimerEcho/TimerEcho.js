@@ -30,6 +30,8 @@ function TimerEcho() {
         show('>> echo');
     }
 
+    let clearHandler = () => setData([]);
+
     return (
         <div className={style.container}>
             <h1 className={commonStyle.header}>
@@ -43,6 +45,12 @@ function TimerEcho() {
                     className={commonStyle.button + ' ' + commonStyle.enabled}
                     value="Отправить"
                     onClick={sendHandler}
+                />
+                <input
+                    type="button"
+                    className={commonStyle.button + ' ' + commonStyle.enabled}
+                    value="Очистить"
+                    onClick={clearHandler}
                 />
             </div>
         </div>
