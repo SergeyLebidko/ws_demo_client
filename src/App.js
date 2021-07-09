@@ -3,6 +3,7 @@ import {Route, Redirect, Switch} from 'react-router-dom';
 import Menu from './Menu/Menu';
 import Echo from './Echo/Echo';
 import GroupEchoContainer from './GroupEchoContainer/GroupEchoContainer';
+import TimerEcho from './TimerEcho/TimerEcho';
 import style from './App.module.css';
 
 const menuItemData = [
@@ -15,6 +16,11 @@ const menuItemData = [
         title: 'Сокет с групповой рассылкой',
         href: 'group_echo',
         component: GroupEchoContainer
+    },
+    {
+        title: 'Сокет, рассылающий сообщения по таймеру',
+        href: 'timer_echo',
+        component: TimerEcho
     }
 ]
 
