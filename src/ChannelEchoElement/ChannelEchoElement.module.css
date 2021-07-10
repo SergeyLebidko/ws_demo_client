@@ -1,0 +1,20 @@
+.container {
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.container > ul {
+    flex: 1;
+}
+
+.element_title {
+    color: dimgray;
+    padding-left: 3em;
+}
+
+.container input[type=button] {
+    width: 15em;
+}
+
+

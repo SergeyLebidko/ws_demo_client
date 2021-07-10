@@ -4,6 +4,7 @@ import Menu from './Menu/Menu';
 import Echo from './Echo/Echo';
 import GroupEchoContainer from './GroupEchoContainer/GroupEchoContainer';
 import TimerEcho from './TimerEcho/TimerEcho';
+import ChannelEchoContainer from './ChannelEchoContainer/ChannelEchoContainer';
 import style from './App.module.css';
 
 const menuItemData = [
@@ -21,6 +22,11 @@ const menuItemData = [
         title: 'Сокет, рассылающий сообщения по таймеру',
         href: 'timer_echo',
         component: TimerEcho
+    },
+    {
+        title: 'Сокет для индивидуальной рассылки',
+        href: 'channel_echo',
+        component: ChannelEchoContainer
     }
 ]
 
